@@ -5,91 +5,103 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BDW</title>
     <style>
-        *{
+        * {
             margin: 0;
             padding: 0;
-            width: 100%;
+            box-sizing: border-box;
             background-color: #161515;
         }
 
-        .main{
-            display: flex;
-            min-width: 1000px;
-            height: 100vh;
-            opacity: 0.8;
-            background-image: url(./imgs/Main.png);
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-position: center;
-            animation: blink 3s alternate;
+        body, html {
+            width: 100%;
+            height: 100%;
+            overflow-x: hidden;
+        }
 
+        .main, .link {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
             text-align: center;
             color: rgb(255, 72, 0);
             border: none;
             cursor: pointer;
-        }
-
-        @keyframes blink {
-            0% {
-                opacity: 0;
-            }
-            10%{
-                opacity: 0;
-            }
-            20%{
-                opacity: 0.4;
-            }25%{
-                opacity: 0;
-            }30%{
-                opacity: 0.4;
-            }60%{
-                opacity: 0;
-            }
-            100% {
-                opacity: 0.8;
-            }
-        }
-
-        i{
-            margin-top: 80vh;
-            background-color: none;
-            width:100px;
-            margin: 80vh auto;
-        }
-
-        .link{
-            min-width: 1000px;
-            height: 100vh;
-            margin: 20px auto;
-            opacity: 0.8;
-            background-image: url(./imgs/istaLink.png);
             background-size: contain;
             background-repeat: no-repeat;
             background-position: center;
+        }
+
+        .main {
+            background-image: url(./imgs/Main.png);
+            animation: blink 3s alternate;
+        }
+
+        .link {
+            background-image: url(./imgs/istaLink.png);
             animation: appear 10s alternate;
-            
-            text-align: center;
-            align-items: end;
-            border: none;
-            cursor: pointer;
         }
 
-
-        @keyframes appear {
-            0% {
-                opacity: 0;
-            }
-            100% {
-                opacity: 1;
-            }
+        i {
+            font-size: 1.2em;
+            font-weight: bold;
         }
 
-        .invite{
-            margin-top: 80vh;
+        .invite {
             color: rgb(255, 72, 0);
             font-weight: 600;
             border: none;
             background-color: #161515;
+        }
+
+        /* Blink animation */
+        @keyframes blink {
+            0%, 10%, 25%, 60% { opacity: 0; }
+            20%, 30%, 100% { opacity: 0.8; }
+        }
+
+        /* Appear animation */
+        @keyframes appear {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        /* 모바일용 스타일 */
+        @media (max-width: 768px) {
+            .main, .link {
+                min-width: 100%;
+                background-size: contain;
+            }
+
+            i {
+                font-size: 1em;
+                padding: 10px;
+                margin-top: 70vh;
+            }
+
+            .invite {
+                margin-top: 70vh;
+                font-size: 1em;
+            }
+        }
+
+        /* 태블릿용 스타일 */
+        @media (min-width: 768px) and (max-width: 1200px) {
+            .main, .link {
+                min-width: 100%;
+                background-size: contain;
+            }
+
+            i {
+                font-size: 1.1em;
+                padding: 15px;
+                margin-top: 75vh;
+            }
+
+            .invite {
+                margin-top: 75vh;
+                font-size: 1.1em;
+            }
         }
     </style>
 </head>
@@ -98,7 +110,6 @@
         <i>초대장 바로가기</i>
     </button>
     <button onclick='location.href="https://www.instagram.com/band_bdw"' class="link">
-
     </button>
 </body>
 </html>
