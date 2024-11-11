@@ -115,19 +115,9 @@
     </div>
 </body>
 <script>
-    // Typed.js 사용하여 타이핑 효과 추가
-    document.addEventListener("DOMContentLoaded", function () {
-        new Typed(".auto-type", {
-            strings: ["Programmer", "Designer", "Full-stack Developer"],
-            typeSpeed: 80,
-            backSpeed: 80,
-            loop: true,
-        });
-    });
-
     // Naver 지도 로드
     function initMap() {
-        const cityhall = new naver.maps.LatLng(37.4985399, 127.0326428);
+        const cityhall = new naver.maps.LatLng(37.560104, 126.926777);
         const map = new naver.maps.Map('map', {
             center: cityhall.destinationPoint(0, 500),
             zoom: 15,
@@ -140,10 +130,8 @@
 
         const contentString = `
             <div class="iw_inner">
-                <h3>KH 정보교육원</h3>
-                <p>서울특별시 강남구 테헤란로 10길 09 | KH 정보교육원 강남지원 2관 <br />
-                02-120 | 공공, 사회기관 <br />
-                </p>
+                <h3>그림 라이브 하우스</h3>
+                <p>서울 서대문구 연희로 14 지하1층</p>
             </div>`;
 
         const infowindow = new naver.maps.InfoWindow({
