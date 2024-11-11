@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BDW</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            background-color: #161515;
+        }
+
+        .main{
+            display: flex;
+            min-width: 1000px;
+            height: 100vh;
+            opacity: 0.8;
+            background-image: url(./imgs/Main.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            animation: blink 3s alternate;
+
+            text-align: center;
+            color: rgb(255, 72, 0);
+            border: none;
+            cursor: pointer;
+        }
+
+        @keyframes blink {
+            0% {
+                opacity: 0;
+            }
+            10%{
+                opacity: 0;
+            }
+            20%{
+                opacity: 0.4;
+            }25%{
+                opacity: 0;
+            }30%{
+                opacity: 0.4;
+            }60%{
+                opacity: 0;
+            }
+            100% {
+                opacity: 0.8;
+            }
+        }
+
+        i{
+            margin-top: 80vh;
+            background-color: none;
+            width:100px;
+            margin: 80vh auto;
+        }
+
+        .link{
+            min-width: 1000px;
+            height: 100vh;
+            margin: 20px auto;
+            opacity: 0.8;
+            background-image: url(./imgs/istaLink.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            animation: appear 10s alternate;
+            
+            text-align: center;
+            align-items: end;
+            border: none;
+            cursor: pointer;
+        }
+
+
+        @keyframes appear {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .invite{
+            margin-top: 80vh;
+            color: rgb(255, 72, 0);
+            font-weight: 600;
+            border: none;
+            background-color: #161515;
+        }
+    </style>
+</head>
+<body>
+    <button class="main" onclick='location.href="./views/details.html"'>
+        <i>초대장 바로가기</i>
+    </button>
+    <button onclick='location.href="https://www.instagram.com/band_bdw"' class="link">
+
+    </button>
+</body>
+</html>
