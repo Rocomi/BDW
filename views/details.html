@@ -28,7 +28,7 @@
             color: rgb(255, 72, 0);
             border: none;
             cursor: pointer;
-            background-size: 500px;
+            background-size: 500px 80vh;
             background-repeat: no-repeat;
             background-position: center;
             animation: slideIn 2s ease-in-out; /* 슬라이드 애니메이션 적용 */
@@ -69,14 +69,14 @@
         /* 모바일용 스타일 */
         @media (max-width: 768px) {
             .teams, .songs {
-                background-size: contain;
+                background-size: contain 80vh;
             }
         }
 
         /* 태블릿용 스타일 */
         @media (min-width: 768px) and (max-width: 1200px) {
             .teams, .songs {
-                background-size: contain;
+                background-size: contain 80vh;
             }
         }
 
@@ -92,6 +92,7 @@
 <body>
     <div class="teams"></div>
     <div class="songs"></div>
+    <div class="location"></div>
     <div class="address-info">
         <p>2024. 11. 30 SAT | 17:00 - 19:30 | ENTRANCE FEE &#8361;5,000 | 1 FREE DRINK</p>
         <p>서울 서대문구 연희로 14 지하1층 | 그림 라이브 하우스</p>
