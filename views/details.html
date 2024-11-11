@@ -33,12 +33,12 @@
             background-size: 500px 80vh;
             background-repeat: no-repeat;
             background-position: center;
-            animation: slideIn 2s ease-in-out; /* 슬라이드 애니메이션 적용 */
+            animation: slideIn 2s ease-in-out;
         }
 
         .teams {
             background-image: url(../imgs/team.png);
-            animation-delay: 0s; /* 첫 번째 슬라이드는 즉시 시작 */
+            animation-delay: 0s;
         }
 
         .songs {
@@ -50,6 +50,7 @@
         #map{
             width: 40%; height: 400px;
             margin: auto;
+            background-color: #fff;
         }
 
         /* 슬라이드 애니메이션 키프레임 */
@@ -61,15 +62,6 @@
             100% {
                 opacity: 1;
                 transform: translateX(0);
-            }
-        }
-
-        @keyframes hide {
-            0% {
-                opacity: 0;
-            }
-            100% {
-                opacity: 0;
             }
         }
 
@@ -121,8 +113,12 @@
     function initMap() {
         const cityhall = new naver.maps.LatLng(37.560104, 126.926777);
         const map = new naver.maps.Map('map', {
-            center: cityhall.destinationPoint(0, 500),
-            zoom: 15,
+            center: cityhall, // 중심을 고정된 위치로 설정합니다.
+            zoom: 16, // 확대 레벨을 조정하여 과도한 확대를 방지합니다.
+            scaleControl: true, // 확대/축소를 위한 스케일 컨트롤 표시
+            zoomControl: true, // 확대/축소 컨트롤 추가
+            minZoom: 10, // 최소 줌 레벨 설정 (너무 과도하게 축소되지 않도록)
+            maxZoom: 18, // 최대 줌 레벨 설정 (너무 과도하게 확대되지 않도록)
         });
 
         const marker = new naver.maps.Marker({
@@ -131,9 +127,9 @@
         });
 
         const contentString = `
-            <div class="iw_inner">
-                <h3>그림 라이브 하우스</h3>
-                <p>서울 서대문구 연희로 14 지하1층</p>
+            <div class="iw_inner" style="padding:10px; color:#ffffff; background-color: rgba(0, 0, 0, 0.7); border-radius:8px;">
+                <h3 style="margin-bottom: 5px; font-size:16px;">그림 라이브 하우스</h3>
+                <p style="margin:0; font-size:14px;">서울 서대문구 연희로 14 지하1층</p>
             </div>`;
 
         const infowindow = new naver.maps.InfoWindow({
